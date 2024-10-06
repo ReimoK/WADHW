@@ -1,12 +1,43 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Page Title</title>
-  </head>
-  <body>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Add Post Page</title>
+</head>
+<body>
+  <header class="header">
+    <ul class="nav">
+        <a href="index.html">Home</a></li>
+    </ul>
+    <a class="logo" href="#"><img src="/pictures/pilt.jpg" width="50" height="50" alt="My picture"></a>
+</header>
+<div class="container">
+  <div class="left-box"></div>
+    <div class="main-content">
 
-    <h1>This is a Heading</h1>
-    <p>This is a paragraph.</p>
+      <div class="post">
+          <div class="post-header">
+              <label for="textarea">Post body</label><br>
+              <textarea id="textarea" rows="4" cols="50"></textarea>
+          </div>
 
-  </body>
+          <div class="post-header">
+              <label>Select file</label><br>
+              <input type="file">
+          </div>
+
+          <button class="like-btn">
+            <a href="index.html">Create Post</a>
+          </button>
+      </div>
+    </div>
+      <div class="right-box"></div>
+</div>
+<footer class="footer">
+  <p>Footer</p>
+</footer>
+</body>
 </html>

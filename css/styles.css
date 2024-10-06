@@ -175,20 +175,7 @@ a {
     background-color: #87cefa;
 }
 
-.post-container {
-    background-color: #f0f0f0;
-    padding: 20px;rgb(160, 8, 8)
-    margin-top: 20px;
-    width: centre;
-  }
-.post-body {
-    margin-bottom: 10px;
-}
-.file-selector {
-    margin-bottom: 20px;
-}
-
-
+/* Responsive layout for smaller screens */
 @media (max-width: 800px) {
     .logo {
         display: none;

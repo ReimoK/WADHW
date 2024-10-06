@@ -23,9 +23,17 @@ a {
     text-decoration: none;
 }
 
-.logo {
-    margin: 0;
-    font-size: 1.1em;
+#footer {
+    padding: .3em;
+    border: 1px solid #646174;
+    background-color: #a2ccea;
+    box-shadow: 0px 0px 14px rgba(0, 0, 0, 0.75);
+    border-radius: 5px;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    text-align: center;
+    left: 0;
 }
 
 .header {
@@ -63,7 +71,7 @@ a {
 }
 
 .footer {
-    padding: .0001em;
+    padding: .3em;
     border: 1px solid #646174;
     background-color: #a2ccea;
     box-shadow: 0px 0px 14px rgba(0, 0, 0, 0.75);
@@ -75,7 +83,6 @@ a {
     left: 0;
 }
 
-/* Flexbox layout for the main content area */
 .container {
     display: flex;
     flex-grow: 1;
@@ -84,18 +91,22 @@ a {
     margin-bottom: 60px;
 }
 
-.left-box, .right-box {
-    width: 15%; /* Adjust this as per your design */
-    background-color: #f0f0f0; /* Light gray background */
+.left-box,
+.right-box {
+    width: 15%;
+    background-color: #f0f0f0;
     padding: 1em;
     border-radius: 5px;
     display: flex;
-    
 }
 
 .main-content {
     flex-grow: 1;
     margin: 0 1em;
+}
+
+.post p {
+    color: #333; 
 }
 
 .post {
@@ -105,45 +116,51 @@ a {
     margin-bottom: 1em;
     border-radius: 5px;
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-    display: flex;  /* Use flexbox to align items */
-    flex-direction: column;  /* Stack elements vertically */
+    display: flex; 
+    flex-direction: column; 
+}
+
+.post > .post-header {
+    margin-bottom: 10px; 
 }
 
 .post-header {
-    display: flex; /* Align profile picture and info horizontally */
-    align-items: center; /* Center vertically */
-    margin-bottom: 10px; /* Space below the header */
+    display: flex; 
+    align-items: center;
+}
+
+.post + .post {
+    border-top: 1.5px solid #007bff;
 }
 
 .profile-pic {
-    width: 40px; /* Size of the profile picture */
+    width: 40px; 
     height: 40px;
-    border-radius: 50%; /* Circular profile picture */
-    margin-right: 10px; /* Space between image and text */
+    border-radius: 50%;
+    margin-right: 10px; 
 }
 
 .post-info {
-    flex-grow: 1; /* Allow info section to take up remaining space */
+    flex-grow: 1; 
 }
 
 .post-date {
-    margin: 0; /* Removes default margin */
-    font-size: 0.9em; /* Adjust font size */
-    color: #555; /* Gray for date */
+    margin: 0;
+    font-size: 0.9em;
+    color: #555;
 }
 
 .post-location {
-    margin: 0; /* Removes default margin */
-    font-size: 0.8em; /* Smaller font size */
-    color: #007bff; /* Color for location/tag */
+    margin: 0;
+    font-size: 0.8em; 
+    color: #007bff; 
 }
 
 .post-img {
-    max-width: 100%; /* Ensure image is responsive */
-    height: auto; /* Maintain aspect ratio */
-    border-radius: 5px; /* Rounded corners for images */
+    max-width: 100%; 
+    height: auto; 
+    border-radius: 5px; 
 }
-
 
 .like-btn {
     margin-top: 0.5em;
@@ -158,13 +175,13 @@ a {
     background-color: #87cefa;
 }
 
-/* Responsive layout for smaller screens */
 @media (max-width: 800px) {
     .logo {
         display: none;
     }
 
-    .left-box, .right-box {
+    .left-box,
+    .right-box {
         display: none;  
     }
 

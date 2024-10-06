@@ -1,121 +1,94 @@
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="css/index.css">
     <link rel="icon" href="res/images/favicon.ico">
     <title>Lab 3 - CSS</title>
 </head>
 
 <body>
-
-
     <header class="header">
         <ul class="nav">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">addPost</a></li>
+            <a href="index.html">Home</a></li>
+            <a href="addPost.html">Add Post</a></li>
         </ul>
-
-        <a class="logo" href="#"><img src="pilt.jpg" width="50" height="50" alt="My picture"></a>
+        <a class="logo" href="#"><img src="/pictures/pilt.jpg" width="50" height="50" alt="My picture"></a>
     </header>
 
+    <div class="container">
+      <div class="left-box"></div>
+        <div class="main-content">
 
-    <section>
-        <h1>Personal Information</h1>
-        <div class="nav">
-            <ul>
-                <li>Your name</li>
-                <li> date: dd/mm/yyyy</li>
-                <li>Software Engineering </li>
-            </ul>
-        </div>
-        <div>
-            <strong>2.65</strong>
-        </div>
-    </section>
+          <div class="post">
+            <div class="post-header">
+                <img src="/pictures/pilt.jpg" alt="Profile Picture" class="profile-pic">
+                <div class="post-info">
+                    <p class="post-date">Oct 22, 2022</p>
+                    <p class="post-location">#TARTU2024</p>
+                </div>
+            </div>
+            <img src="/pictures/tartu.jpg" alt="Post image" class="post-img">
+            <p>Tartu 2022</p>
+            <button class="like-btn">Like</button>
+          </div>
+        
+          <div class="post">
+            <div class="post-header">
+                <img src="/pictures/pilt.jpg" alt="Profile Picture" class="profile-pic">
+                <div class="post-info">
+                    <p class="post-date">Oct 29, 2023</p>
+                </div>
+            </div>
+            <p>Where could I find myself a nice pair of shoes?</p>
+            <button class="like-btn">Like</button>
+          </div>
 
-    <section>
-        <h1>Courses</h1>
-        <table>
-            <thead>
-                <tr>
-                    <th>#</th>
-                    <th>Course Title</th>
-                    <th>Semester</th>
-                    <th>Grade</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>Agile software development</td>
-                    <td>fall</td>
-                    <td>82</td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td> Systems modelling </td>
-                    <td>fall</td>
-                    <td>85</td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td> Requirements Engineering </td>
-                    <td>fall</td>
-                    <td>99</td>
-                </tr>
-                <tr>
-                    <td>4</td>
-                    <td> Human Computer Interaction </td>
-                    <td>fall</td>
-                    <td>65</td>
-                </tr>
-            </tbody>
-            <tfoot>
-                <tr>
-                    <td>-</td>
-                    <td> - </td>
-                    <td>-</td>
-                    <td>- </td>
-                </tr>
-            </tfoot>
-        </table>
-    </section>
+          <div class="post">
+            <div class="post-header">
+                <img src="/pictures/pilt.jpg" alt="Profile Picture" class="profile-pic">
+                <div class="post-info">
+                    <p class="post-date">Dec 12, 2023</p>
+                </div>
+            </div>
+            <p>What's there to do in Jõgeva?</p>
+            <button class="like-btn">Like</button>
+          </div>
 
+          <div class="post">
+            <div class="post-header">
+                <img src="/pictures/pilt.jpg" alt="Profile Picture" class="profile-pic">
+                <div class="post-info">
+                    <p class="post-date">Jan 14, 2024</p>
+                    <p class="post-location">#TALLINN2024</p>
+                </div>
+            </div>
+            <img src="/pictures/tallinn.jpg" alt="Post image" class="post-img">
+            <p>Tallinn</p>
+            <button class="like-btn">Like</button>
+          </div>
 
-
-
-    <div class="grid">
-
-        <p>Course 1 - Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus ullam voluptates veniam, alias modi nulla nobis nisi quo reprehenderit cupiditate, veritatis tenetur voluptate corporis corrupti ipsa, accusantium minus porro quae.</p>
-
-        <p>Course 2 - Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus ullam voluptates veniam, alias modi nulla nobis nisi quo reprehenderit cupiditate, veritatis tenetur voluptate corporis corrupti ipsa, accusantium minus porro quae.</p>
-
-
-        <p>Course 3 - Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus ullam voluptates veniam, alias modi nulla nobis nisi quo reprehenderit cupiditate, veritatis tenetur voluptate corporis corrupti ipsa, accusantium minus porro quae.</p>
-
-        <p>Course 4 - Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus ullam voluptates veniam, alias modi nulla nobis nisi quo reprehenderit cupiditate, veritatis tenetur voluptate corporis corrupti ipsa, accusantium minus porro quae.</p>
-
-
-    </div>
-
-
-
+          <div class="post">
+            <div class="post-header">
+                <img src="/pictures/pilt.jpg" alt="Profile Picture" class="profile-pic">
+                <div class="post-info">
+                    <p class="post-date">Sept 29, 2024</p>
+                </div>
+            </div>
+            <p>This is my favorite website!!!</p>
+            <button class="like-btn">Like</button>
+          </div>
+        
+      </div>
+      <div class="right-box"></div>
+  </div>
 
     <footer class="footer">
-        <ul>
-            <li>
-                <a href="https://ois2.ut.ee/">OIS</a>
-            </li>
-            <li>
-                <a href="https://courses.cs.ut.ee/">Courses</a>
-            </li>
-        </ul>
+        <p>Footer</p>
     </footer>
-
-
 </body>
 
 </html>

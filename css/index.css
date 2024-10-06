@@ -1,29 +1,26 @@
 * {
     font-family: sans-serif;
     box-sizing: border-box;
-    
 }
+
 body {
     line-height: 1.6;
     margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 ul {
     margin: 0;
     padding: 0;
     list-style: none;
-     /* 
-       list-style: none = No marker is shown 
-     */
 }
 
 a {
     color: #34495e;
     text-decoration: none;
-     /* 
-       text-decoration: none - is used here to not show underlining under an anchor element when a mouse hovers over it.
-       Comment it out and check the result on the page.
-     */
 }
 
 .logo {
@@ -31,128 +28,154 @@ a {
     font-size: 1.1em;
 }
 
-section {
-    padding: 10px 15px;
-    margin: 10px;
-    display: block;
-        /* 
-          display: block - displays an element as a block element. It starts on a new line, and takes up the whole width
-       */
-}
 .header {
-    padding-top: .5em;
-    padding-bottom: .5em;
+    padding: .3em 1em;
     border: 1px solid #646174;
     background-color: #a2ccea;
-    box-shadow: 0px 0px 14px 0px rgba(0, 0, 0, 0.75);
-
-    /* 
-    -webkit-box-shadow: 0px 0px 14px 0px rgba(0, 0, 0, 0.75);
-    -moz-box-shadow: 0px 0px 14px 0px rgba(0, 0, 0, 0.75);
-
-    -webkit-box-shadow and -moz-box-shadow were browser-specific box-shadow implementations for
-     WebKit browsers like Google Chrome and Safari, and mozilla firefox. Such prefixes are, usually
-     used, when a new CSS feature appears and disappears when the feature is fully supported by 
-     the browser.
-
-     In short, concerning Vendor Prefixes (-webkit, -moz, etc.):  
-       1- A new CSS feature appears;
-       2- Browsers test the feature; 
-       3- Browsers add a prefix to it to allow using it;
-       4- There is no need for the prefix anymore when the feature is fully supported.
-     */
-
+    box-shadow: 0px 0px 14px rgba(0, 0, 0, 0.75);
     border-radius: 5px;
-    position: sticky;
+    position: fixed;
     top: 0;
-    width: 100%
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
 }
+
 .nav {
-  margin-top: 5px;
+    display: flex;
+    gap: 1em;
 }
 
 .nav a {
-  padding: 10px 15px;
-  text-transform: uppercase;
-  text-align: center;
-  display: block;
-  color: #34495e;
-  font-size: .99em;
+    padding: 10px 15px;
+    text-align: center;
+    color: #34495e;
+    font-size: .99em;
+    background-color: #a2ccea;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
 }
 
-/* Pseudo-class selector */
 .nav a:hover {
-  background-color: #7ebeb6;
-  color: #092747;
+    background-color: lightblue;
 }
-    /* 
-      Applies when the browser's width is 800px wide or wider: 
-    */
 
-@media (min-width: 800px) {
-  .header,
-  .nav {
-      display: flex;
-  }
-  .header {
-      flex-direction: column;
-      align-items: center;
-  }
+.footer {
+    padding: .0001em;
+    border: 1px solid #646174;
+    background-color: #a2ccea;
+    box-shadow: 0px 0px 14px rgba(0, 0, 0, 0.75);
+    border-radius: 5px;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    text-align: center;
+    left: 0;
 }
-  
-      /* 
-       Applies when the browser's width is 1000px wide or wider: 
-       */
-  
-@media (min-width: 1000px) {
-  .header {
-      flex-direction: row;
-      justify-content: space-between;
-  }
+
+/* Flexbox layout for the main content area */
+.container {
+    display: flex;
+    flex-grow: 1;
+    padding: 1em;
+    margin-top: 60px;
+    margin-bottom: 60px;
 }
-@media (max-width: 800px){
-  .logo{
-    display: none;
-  }
+
+.left-box, .right-box {
+    width: 15%; /* Adjust this as per your design */
+    background-color: #f0f0f0; /* Light gray background */
+    padding: 1em;
+    border-radius: 5px;
+    display: flex;
+    
 }
-.grid {
-  margin: 20px auto;
-  width: 100%;
-  border: 1px solid #746161;
-  background-color: #ddd;
-  display: grid;
-  grid-template-columns: auto auto;
-  /*     
-    grid-template-columns - the grid-template-columns CSS property defines the numbers and  
-    sizing functions of the grid columns.
-  */
-  gap: 10px 10px;
-  /* 
-  gap: row-gap and column-gap.
-  */
+
+.main-content {
+    flex-grow: 1;
+    margin: 0 1em;
 }
+
+.post {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    padding: 1em;
+    margin-bottom: 1em;
+    border-radius: 5px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;  /* Use flexbox to align items */
+    flex-direction: column;  /* Stack elements vertically */
+}
+
+.post-header {
+    display: flex; /* Align profile picture and info horizontally */
+    align-items: center; /* Center vertically */
+    margin-bottom: 10px; /* Space below the header */
+}
+
+.profile-pic {
+    width: 40px; /* Size of the profile picture */
+    height: 40px;
+    border-radius: 50%; /* Circular profile picture */
+    margin-right: 10px; /* Space between image and text */
+}
+
+.post-info {
+    flex-grow: 1; /* Allow info section to take up remaining space */
+}
+
+.post-date {
+    margin: 0; /* Removes default margin */
+    font-size: 0.9em; /* Adjust font size */
+    color: #555; /* Gray for date */
+}
+
+.post-location {
+    margin: 0; /* Removes default margin */
+    font-size: 0.8em; /* Smaller font size */
+    color: #007bff; /* Color for location/tag */
+}
+
+.post-img {
+    max-width: 100%; /* Ensure image is responsive */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 5px; /* Rounded corners for images */
+}
+
+
+.like-btn {
+    margin-top: 0.5em;
+    padding: 0.5em 1em;
+    background-color: lightblue;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.like-btn:hover {
+    background-color: #87cefa;
+}
+
+/* Responsive layout for smaller screens */
+@media (max-width: 800px) {
+    .logo {
+        display: none;
+    }
+
+    .left-box, .right-box {
+        display: none;  
+    }
+
+    .main-content {
+        margin: 0;
+    }
+}
+
 @media (max-width: 500px) {
-  .grid {
-    grid-template-columns: auto; 
-  }
-}
-
-.grid p {
-  background-color: rgb(177, 164, 164);
-  color: white;
-  padding: 20px;
-  font-weight: bold;
-  text-align: center;
-}
-p:hover {
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); 
-}
-section div strong {
-  color: #439fe1; 
-}
-thead > tr > th {
-  background-color: #439fe1;
-}
-tbody > tr > td {
-  background-color: #a2ccea;
+    .nav {
+        flex-direction: column;
+        align-items: center;
+    }
 }

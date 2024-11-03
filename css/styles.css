@@ -112,7 +112,7 @@ a {
 
 .post-header {
     display: flex; /* Align profile picture and info horizontally */
-    align-items: center; /* Center vertically */
+    align-items: flex-start; /* Center vertically */
     margin-bottom: 10px; /* Space below the header */
 }
 
@@ -124,7 +124,10 @@ a {
 }
 
 .post-info {
+    display: flex; /* Align items in a row */
+    flex-direction: column; /* Stack elements vertically */
     flex-grow: 1; /* Allow info section to take up remaining space */
+    margin-left: 10px; /* Space between profile picture and text */
 }
 
 .post-date {
@@ -143,6 +146,13 @@ a {
     max-width: 100%; /* Ensure image is responsive */
     height: auto; /* Maintain aspect ratio */
     border-radius: 5px; /* Rounded corners for images */
+}
+.authorName,
+.post-date,
+.post-location {
+    margin: 0; /* Ensure no margins */
+    padding: 0; /* Ensure no paddings */
+    line-height: 1.5; /* Set line height to remove extra space */
 }
 
 

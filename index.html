@@ -45,6 +45,8 @@
                 //const apiKey = '$2a$10$fleN3NXB2bW.zpicFEG3HuJJ8jWEAsqCXGR1kUUHFK3S8NvXwIZFK'; 
                 
             try {
+                const response = await fetch('posts.json');
+                // on online source this line would be:
                 /*
                 const response = await fetch(url, {
                     headers: {
@@ -53,8 +55,8 @@
                     }
                 });
                 */
-                const response = await fetch('posts.json');
                 const posts = await response.json();
+                // on online source, this line would be renderPosts(posts.record)
                 renderPosts(posts);
             } catch (error) {
                 console.error('Error fetching posts:', error);
@@ -80,6 +82,10 @@
                 const postInfo = document.createElement('div');
                 postInfo.classList.add('post-info');
 
+                const authorName = document.createElement('p');
+                authorName.classList.add('authorName');
+                authorName.textContent = post.authorName;
+
                 const postDate = document.createElement('p');
                 postDate.classList.add('post-date');
                 postDate.textContent = post.createTime;
@@ -90,6 +96,7 @@
                     postLocation.textContent = post.location;
                 }
 
+                postInfo.appendChild(authorName);
                 postInfo.appendChild(postDate);
                 if (post.location) postInfo.appendChild(postLocation);
 

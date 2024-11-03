@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,7 +7,6 @@
     <link rel="stylesheet" href="css/styles.css">
     <title>PostIt</title>
 </head>
-
 <body>
     <header class="header">
         <ul class="nav">
@@ -20,75 +18,99 @@
     </header>
 
     <div class="container">
-      <div class="left-box"></div>
-        <div class="main-content">
-
-          <div class="post">
-            <div class="post-header">
-                <img src="pictures/pilt.jpg" alt="Profile Picture" class="profile-pic">
-                <div class="post-info">
-                    <p class="post-date">Oct 22, 2022</p>
-                    <p class="post-location">#TARTU2024</p>
-                </div>
-            </div>
-            <img src="pictures/tartu.jpg" alt="Post image" class="post-img">
-            <p>Tartu 2022</p>
-            <button class="like-btn">Like</button>
-          </div>
-        
-          <div class="post">
-            <div class="post-header">
-                <img src="pictures/pilt.jpg" alt="Profile Picture" class="profile-pic">
-                <div class="post-info">
-                    <p class="post-date">Oct 29, 2023</p>
-                </div>
-            </div>
-            <p>Where could I find myself a nice pair of shoes?</p>
-            <button class="like-btn">Like</button>
-          </div>
-
-          <div class="post">
-            <div class="post-header">
-                <img src="pictures/pilt.jpg" alt="Profile Picture" class="profile-pic">
-                <div class="post-info">
-                    <p class="post-date">Dec 12, 2023</p>
-                </div>
-            </div>
-            <p>What's there to do in Jõgeva?</p>
-            <button class="like-btn">Like</button>
-          </div>
-
-          <div class="post">
-            <div class="post-header">
-                <img src="pictures/pilt.jpg" alt="Profile Picture" class="profile-pic">
-                <div class="post-info">
-                    <p class="post-date">Jan 14, 2024</p>
-                    <p class="post-location">#TALLINN2024</p>
-                </div>
-            </div>
-            <img src="pictures/tallinn.jpg" alt="Post image" class="post-img">
-            <p>Tallinn</p>
-            <button class="like-btn">Like</button>
-          </div>
-
-          <div class="post">
-            <div class="post-header">
-                <img src="pictures/pilt.jpg" alt="Profile Picture" class="profile-pic">
-                <div class="post-info">
-                    <p class="post-date">Sept 29, 2024</p>
-                </div>
-            </div>
-            <p>This is my favorite website!!!</p>
-            <button class="like-btn">Like</button>
-          </div>
-        
-      </div>
-      <div class="right-box"></div>
-  </div>
+        <div class="left-box"></div>
+        <div class="main-content" id="main-content"></div>
+        <div class="right-box"></div>
+    </div>
 
     <footer class="footer">
-        <p> </p>
+        <p> </p>
     </footer>
-</body>
 
+
+    <script>
+        async function fetchPosts() {
+                // The commented part is fetching from an online source, the response attribute would also
+                // differ to some extent, as I would have to include the type and my apiKey.
+                //const url = 'https://api.jsonbin.io/v3/b/67276ddaad19ca34f8c34f85'; 
+                //const apiKey = '$2a$10$fleN3NXB2bW.zpicFEG3HuJJ8jWEAsqCXGR1kUUHFK3S8NvXwIZFK'; 
+                
+            try {
+                /*
+                const response = await fetch(url, {
+                    headers: {
+                        "Content-Type": "application/json",
+                        "X-Master-Key": apiKey
+                    }
+                });
+                */
+                const response = await fetch('posts.json');
+                const posts = await response.json();
+                renderPosts(posts.record);
+            } catch (error) {
+                console.error('Error fetching posts:', error);
+            }
+        }
+
+        function renderPosts(posts) {
+            const mainContent = document.getElementById('main-content');
+            mainContent.innerHTML = '';
+
+            posts.forEach(post => {
+                const postElement = document.createElement('div');
+                postElement.classList.add('post');
+
+                const postHeader = document.createElement('div');
+                postHeader.classList.add('post-header');
+
+                const profilePic = document.createElement('img');
+                profilePic.src = 'pictures/pilt.jpg';
+                profilePic.alt = 'Profile Picture';
+                profilePic.classList.add('profile-pic');
+
+                const postInfo = document.createElement('div');
+                postInfo.classList.add('post-info');
+
+                const postDate = document.createElement('p');
+                postDate.classList.add('post-date');
+                postDate.textContent = post.createTime;
+
+                const postLocation = document.createElement('p');
+                postLocation.classList.add('post-location');
+                if (post.location) {
+                    postLocation.textContent = post.location;
+                }
+
+                postInfo.appendChild(postDate);
+                if (post.location) postInfo.appendChild(postLocation);
+
+                postHeader.appendChild(profilePic);
+                postHeader.appendChild(postInfo);
+
+                const postContent = document.createElement('p');
+                postContent.textContent = post.postContent;
+
+                let postImage;
+                if (post.imageUrl) {
+                    postImage = document.createElement('img');
+                    postImage.src = post.imageUrl;
+                    postImage.alt = 'Post image';
+                    postImage.classList.add('post-img');
+                }
+
+                const likeButton = document.createElement('button');
+                likeButton.classList.add('like-btn');
+                likeButton.textContent = 'Like';
+
+                postElement.appendChild(postHeader);
+                if (postImage) postElement.appendChild(postImage);
+                postElement.appendChild(postContent);
+                postElement.appendChild(likeButton);
+
+                mainContent.appendChild(postElement);
+            });
+        }
+        fetchPosts();
+    </script>
+</body>
 </html>

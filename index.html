@@ -55,7 +55,7 @@
                 */
                 const response = await fetch('posts.json');
                 const posts = await response.json();
-                renderPosts(posts.record);
+                renderPosts(posts);
             } catch (error) {
                 console.error('Error fetching posts:', error);
             }

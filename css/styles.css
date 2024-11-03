@@ -162,7 +162,8 @@ a {
 /* Responsive layout for smaller screens */
 @media (max-width: 800px) {
     .logo {
-        display: none;
+        width: 10;
+        height: 10;
     }
 
     .left-box, .right-box {

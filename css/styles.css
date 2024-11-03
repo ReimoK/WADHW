@@ -137,22 +137,22 @@ a {
 }
 
 .post-location {
-    margin: 0; /* Removes default margin */
-    font-size: 0.8em; /* Smaller font size */
-    color: #007bff; /* Color for location/tag */
+    margin: 0; 
+    font-size: 0.8em; 
+    color: #007bff;
 }
 
 .post-img {
-    max-width: 100%; /* Ensure image is responsive */
-    height: auto; /* Maintain aspect ratio */
-    border-radius: 5px; /* Rounded corners for images */
+    max-width: 100%; 
+    height: auto;
+    border-radius: 5px; 
 }
 .authorName,
 .post-date,
 .post-location {
-    margin: 0; /* Ensure no margins */
-    padding: 0; /* Ensure no paddings */
-    line-height: 1.5; /* Set line height to remove extra space */
+    margin: 0; 
+    padding: 0; 
+    line-height: 1.5; 
 }
 
 
@@ -259,11 +259,11 @@ label ~ .forgot-password {
 }
 .dropdown {
     position: relative;
-    cursor: pointer; /* Add cursor change to indicate clickable area */
+    cursor: pointer;
 }
 
 .dropdown-content {
-    display: none; /* Hide by default */
+    display: none; 
     position: absolute;
     background-color: #ffffff;
     min-width: 160px;
